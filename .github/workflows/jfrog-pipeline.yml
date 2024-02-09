@@ -14,6 +14,7 @@ jobs:
         env:  
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-           
+      - name: env
+        run: env           
       - name: Run Docker command
         run: docker run --rm --mount type=bind,source="$(pwd)",target=/scan registry.fortidevsec.forticloud.com/fdevsec_sast:latest
